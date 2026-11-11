@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f8f4e9">
+  <title>Dashboard · Comunicación 6toA 2026</title>
+  <link rel="icon" href="../assets/favicon.svg"><link rel="stylesheet" href="../styles.css">
+  <script type="module" src="../js/admin.js"></script>
+</head>
+<body class="admin-body">
+  <header class="header"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">c<span>✳</span></span><span>Comunicación<span class="brand-small">6toA · 2026</span></span></a><a href="../" class="secondary-button">← Ver la muestra</a></header>
+  <main class="admin-shell">
+    <p class="eyebrow">COMUNICACIÓN 6toA · 2026</p>
+    <h1>Un espacio para<br><em>cuidar las voces.</em></h1>
+    <p class="admin-description">Dashboard de administración del tablero de consejos.</p>
+    <p id="admin-status" role="status" class="form-status"></p>
+    <aside id="setup-notice" class="setup-notice" hidden><strong>Primero, conectá tu proyecto de Firebase.</strong><p>Seguí la guía para crear el proyecto, tu usuario administrador y los permisos.</p><a href="../GUIA-FIREBASE.md" class="secondary-button">Leer guía paso a paso ↗</a><p>La guía también está en el archivo GUIA-FIREBASE.md de esta carpeta.</p></aside>
+    <form id="login-form" class="admin-login" method="post">
+      <p class="eyebrow">ACCESO PRIVADO</p><h2>Hola de nuevo.</h2>
+      <p class="admin-warning">Ingresá con el correo y la contraseña que creaste en Firebase.</p>
+      <label for="email">Correo electrónico</label><input id="email" name="email" type="email" required autocomplete="username" placeholder="tu-correo@ejemplo.com">
+      <label for="password">Contraseña</label><input id="password" name="password" type="password" required autocomplete="current-password">
+      <p class="form-note">La sesión se cierra al recargar o cerrar esta página.</p>
+      <button class="button" type="submit" disabled>Entrar al dashboard ↗</button>
+      <button id="reset-password" type="button" class="text-button" disabled>Olvidé mi contraseña</button>
+    </form>
+    <section id="moderation" hidden aria-label="Administrar consejos">
+      <div class="dashboard-top"><p><span class="live-dot" aria-hidden="true"></span> Actualización en tiempo real</p><div><span id="admin-email"></span><button id="logout" class="secondary-button">Cerrar sesión</button></div></div>
+      <div class="dashboard-stats" aria-label="Resumen del tablero">
+        <div class="stat-card"><span>Todos los consejos</span><strong id="stat-total">—</strong><small>Voces que se sumaron</small></div>
+        <div class="stat-card stat-blue"><span>Publicados</span><strong id="stat-approved">—</strong><small>Visibles para todos</small></div>
+        <div class="stat-card stat-pink"><span>Fuera del tablero</span><strong id="stat-hidden">—</strong><small>Ocultos, pendientes o rechazados</small></div>
+      </div>
+      <div class="dashboard-filters"><label for="search">Buscar consejos<input id="search" type="search" placeholder="Buscá por nombre o por una palabra…"></label><label for="status-filter">Estado<select id="status-filter"><option value="all">Todos</option><option value="approved">Publicados</option><option value="hidden">Ocultos</option><option value="pending">Pendientes</option><option value="rejected">Rechazados</option></select></label></div>
+      <p id="list-status" role="status" class="admin-warning"></p>
+      <div id="admin-list" class="admin-list"></div>
+      <div class="admin-pagination"><button class="secondary-button" id="previous">← Anterior</button><span id="page-label"></span><button class="secondary-button" id="next">Siguiente →</button></div>
+    </section>
+  </main>
+  <dialog id="delete-dialog" aria-labelledby="delete-title"><h2 id="delete-title">¿Eliminar consejo?</h2><p>Se borrará definitivamente y dejará de aparecer en el tablero de todos los visitantes.</p><blockquote id="delete-preview"></blockquote><div class="admin-actions"><button id="cancel-delete">Cancelar</button><button id="confirm-delete">Eliminar definitivamente</button></div></dialog>
+</body>
+</html>

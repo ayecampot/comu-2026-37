@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 580" fill="none">
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" stroke="#b52c29" stroke-opacity=".09"/></pattern><pattern id="grill" width="9" height="10" patternUnits="userSpaceOnUse"><path d="M0 3h6" stroke="#efb7be" stroke-width="3" stroke-linecap="round"/></pattern><filter id="shadow" x="-30%" y="-30%" width="170%" height="170%"><feDropShadow dx="3" dy="8" stdDeviation="5" flood-color="#78433a" flood-opacity=".12"/></filter></defs>
+<rect x="26" y="28" width="602" height="510" rx="140" fill="#efd4da" transform="rotate(-4 327 283)"/>
+<rect x="26" y="28" width="602" height="510" rx="140" fill="url(#grid)" transform="rotate(-4 327 283)"/>
+<circle cx="447" cy="229" r="168" fill="#b8d4e0"/>
+<path d="M285 419c45-69 130-65 194-9 45 41 85 41 119 10" stroke="#b52c29" stroke-width="3"/>
+<path d="M298 433c45-69 130-65 194-9 45 41 85 41 119 10" stroke="#b52c29" stroke-width="1.3"/>
+<g transform="rotate(12 167 355)" filter="url(#shadow)"><rect x="48" y="263" width="200" height="227" rx="5" fill="#faf5e8"/><path d="M71 263v227" stroke="#db8f8b"/><path d="M52 302h192M52 329h192M52 356h192M52 383h192M52 410h192M52 437h192M52 464h192" stroke="#adc1ca" stroke-opacity=".55"/><path d="M88 315c25-15 42 8 59-1m-58 29h121m-119 27h105m-103 27h114" stroke="#b52c29" stroke-width="2.3" stroke-linecap="round"/><text x="89" y="289" font-family="Georgia,serif" font-size="18" fill="#b52c29">Ideas al aire</text></g>
+<g transform="rotate(-13 345 249)" filter="url(#shadow)"><path d="M268 238v34c0 49 39 88 87 88s87-39 87-88v-34" stroke="#922421" stroke-width="11" stroke-linecap="round"/><path d="M355 358v100m-52 3h104" stroke="#922421" stroke-width="13" stroke-linecap="round"/><rect x="287" y="95" width="136" height="227" rx="67" fill="#b52c29"/><rect x="299" y="108" width="112" height="166" rx="55" fill="url(#grill)"/><path d="M293 280h124" stroke="#f4c7ce" stroke-width="3"/><circle cx="355" cy="299" r="7" fill="#f8eed9"/><path d="M351 126v129" stroke="#b52c29" stroke-width="5"/></g>
+<g transform="rotate(22 492 372)" filter="url(#shadow)"><path d="M435 381v-52c0-42 27-68 59-68s59 26 59 68v52" stroke="#f9f1df" stroke-width="22"/><path d="M435 381v-52c0-42 27-68 59-68s59 26 59 68v52" stroke="#b52c29" stroke-width="3"/><rect x="416" y="344" width="35" height="72" rx="15" fill="#b52c29"/><rect x="537" y="344" width="35" height="72" rx="15" fill="#b52c29"/><rect x="429" y="349" width="23" height="62" rx="10" fill="#efb7be"/><rect x="536" y="349" width="23" height="62" rx="10" fill="#efb7be"/><path d="M560 413v18c0 36-18 54-53 54h-27" stroke="#b52c29" stroke-width="4" stroke-linecap="round"/></g>
+<g transform="rotate(-9 157 142)"><rect x="57" y="87" width="191" height="75" rx="5" fill="#f8f1dd"/><circle cx="80" cy="123" r="6" fill="#b52c29"/><text x="97" y="130" fill="#b52c29" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="3">AL AIRE</text></g>
+<path d="M555 73v48m-24-24h48m-41-17 34 34m0-34-34 34" stroke="#b52c29" stroke-width="4"/>
+<path d="m76 213 8-22 8 22 22 8-22 8-8 22-8-22-22-8Z" fill="#b52c29"/>
+<path d="m245 475 6-17 6 17 17 6-17 6-6 17-6-17-17-6Z" fill="#b52c29"/>
+<path d="M585 239v8m0 11v23m-12-20h24" stroke="#b52c29" stroke-width="3"/>
+<circle cx="203" cy="211" r="5" fill="#b52c29"/><circle cx="512" cy="159" r="5" fill="#b52c29"/>
+<path d="m144 522 99 9 121-11" stroke="#b52c29" stroke-width="2"/>
+<g transform="rotate(6 386 496)"><rect x="316" y="469" width="142" height="49" fill="#ecd083"/><text x="329" y="499" font-family="Arial,sans-serif" font-size="14" letter-spacing="2" fill="#732b26">6toA · 2026</text></g>
+</svg>

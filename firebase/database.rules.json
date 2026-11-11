@@ -1,0 +1,33 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "admins": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": false
+      }
+    },
+    "advice": {
+      ".indexOn": ["status"],
+      ".read": "(auth != null && root.child('admins').child(auth.uid).val() === true) || (query.orderByChild === 'status' && query.equalTo === 'approved')",
+      "$id": {
+        ".write": "(!data.exists() && newData.exists() && newData.child('status').val() === 'approved') || (auth != null && root.child('admins').child(auth.uid).val() === true)",
+        ".validate": "newData.hasChildren(['alias', 'message', 'status', 'created_at']) && (!data.exists() || (newData.child('alias').val() === data.child('alias').val() && newData.child('message').val() === data.child('message').val() && newData.child('created_at').val() === data.child('created_at').val()))",
+        "alias": {
+          ".validate": "newData.isString() && newData.val().length <= 40"
+        },
+        "message": {
+          ".validate": "newData.isString() && newData.val().length >= 10 && newData.val().length <= 500 && newData.val().matches(/^[\\s\\S]*\\S[\\s\\S]*$/)"
+        },
+        "status": {
+          ".validate": "newData.val() === 'approved' || newData.val() === 'hidden' || newData.val() === 'pending' || newData.val() === 'rejected'"
+        },
+        "created_at": {
+          ".validate": "newData.isNumber() && (data.exists() ? newData.val() === data.val() : newData.val() === now)"
+        },
+        "$other": { ".validate": false }
+      }
+    }
+  }
+}
