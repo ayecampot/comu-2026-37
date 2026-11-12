@@ -2,18 +2,23 @@
 // Guardá las portadas y audios en assets/ y completá sus rutas.
 export const content = {
   school: 'Nombre de la escuela',
-  teacher: 'Nombre de la docente',
+  teacher: 'Ayelen Campoy y Carolina Baiguera',
   year: '2026',
   projects: {
     puentes: Array.from({ length: 3 }, (_, i) => ({
-      id: `puentes-${i + 1}`, title: i === 0 ? 'Salud Mental: Ludopatía' : 'Próximamente',
-      cover: i === 0 ? 'assets/ludopatia.jpeg' : '',
-      audio: i === 0 ? 'assets/ludopatia.mp3' : '',
+      id: `puentes-${i + 1}`, title: ['Puentes · S3 · Capítulo 1: La industria de la moda ultra rápida', 'Puentes · S3 · Capítulo 2: La ludopatía', 'Puentes · S3 · Capítulo 3: Las migraciones'][i],
+      cover: '',
+      audio: ['assets/modarapida.mp3', 'assets/ludopatia.mp3', 'assets/las-migraciones.mpeg'][i],
       label: `PODCAST ${String(i + 1).padStart(2, '0')}`,
       theme: ['pink', 'blue', 'yellow'][i], illustration: ['bridge', 'voices', 'waves'][i],
     })),
     taller: Array.from({ length: 3 }, (_, i) => ({
-      id: `taller-${i + 1}`, title: ['Podcast 1', 'Podcast 2', 'Próximamente'][i],
+      id: `taller-${i + 1}`, title: ['Oportunidades laborales entre jóvenes', 'Descifrando el laberinto del empleo', 'Hablemos de lo que no se ve'][i],
+      members: [
+        ['Candela Erazo', 'Constanza Gonzalez'],
+        ['Nayla Callero', 'Morena Aquino', 'Morena Valdez', 'Nehuen Yanquetruz'],
+        ['Aylen Contreras', 'Mariana Rivas', 'Joel Russo', 'Tomás Miramón'],
+      ][i],
       cover: ['assets/podcast-1.jpeg', 'assets/podcast-2.jpg', ''][i],
       audio: ['assets/podcast-1.mp3', 'assets/podcast-2.mp3', 'assets/podcast-3.mp3'][i],
       label: `PODCAST ${String(i + 1).padStart(2, '0')}`,

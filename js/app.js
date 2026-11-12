@@ -2,6 +2,23 @@ import { content } from './content.js';
 import { illustration } from './illustrations.js';
 import { watchAdvice, submitAdvice, isConfigured, friendlyError } from './api.js';
 
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.querySelector('#main-nav');
+function setMenuOpen(open) {
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  mainNav.classList.toggle('is-open', open);
+}
+menuToggle.addEventListener('click', () => setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true'));
+mainNav.addEventListener('click', event => { if (event.target.closest('a')) setMenuOpen(false); });
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+    setMenuOpen(false); menuToggle.focus();
+  }
+});
+document.addEventListener('click', event => { if (!event.target.closest('.header')) setMenuOpen(false); });
+window.matchMedia('(max-width: 800px)').addEventListener('change', () => setMenuOpen(false));
+
 function renderPodcast(item) {
   const card = document.createElement('article');
   card.className = `podcast-card theme-${item.theme}`;
@@ -20,6 +37,11 @@ function renderPodcast(item) {
   const label = document.createElement('span'); label.textContent = item.label; meta.append(label);
   if (!item.audio) { const badge = document.createElement('span'); badge.className = 'coming-label'; badge.textContent = 'En preparación'; meta.append(badge); }
   const title = document.createElement('h3'); title.textContent = item.title; body.append(meta, title);
+  if (item.members?.length) {
+    const members = document.createElement('p'); members.className = 'card-members';
+    const heading = document.createElement('strong'); heading.textContent = 'Integrantes: ';
+    members.append(heading, item.members.join(', ')); body.append(members);
+  }
   if (item.audio) { const audio = document.createElement('audio'); audio.controls = true; audio.preload = 'none'; audio.src = new URL(item.audio.replace(/^\//, ''), document.baseURI).href; audio.setAttribute('aria-label', `Escuchar ${item.title}`); body.append(audio); }
   else {
     const placeholder = document.createElement('div'); placeholder.className = 'audio-placeholder';
