@@ -5,13 +5,13 @@ export const content = {
   teacher: 'Ayelen Campoy y Carolina Baiguera',
   year: '2026',
   projects: {
-    puentes: Array.from({ length: 3 }, (_, i) => ({
-      id: `puentes-${i + 1}`, title: ['Puentes · S3 · Capítulo 1: La industria de la moda ultra rápida', 'Puentes · S3 · Capítulo 2: La ludopatía', 'Puentes · S3 · Capítulo 3: Las migraciones'][i],
+    puentes: [{
+      id: 'puentes-3', title: 'Puentes · S3 · Capítulo 3: Las migraciones',
       cover: '',
-      audio: ['assets/modarapida.mp3', 'assets/ludopatia.mp3', 'assets/las-migraciones.mpeg'][i],
-      label: `PODCAST ${String(i + 1).padStart(2, '0')}`,
-      theme: ['pink', 'blue', 'yellow'][i], illustration: ['bridge', 'voices', 'waves'][i],
-    })),
+      audio: 'assets/las-migraciones.mp3',
+      label: 'PODCAST 03',
+      theme: 'yellow', illustration: 'waves',
+    }],
     taller: Array.from({ length: 3 }, (_, i) => ({
       id: `taller-${i + 1}`, title: ['Oportunidades laborales entre jóvenes', 'Descifrando el laberinto del empleo', 'Hablemos de lo que no se ve'][i],
       members: [
